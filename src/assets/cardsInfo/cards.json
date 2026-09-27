@@ -1,0 +1,1171 @@
+[
+  {
+    "idCarta": 1,
+    "tipo": "Jugador",
+    "personaje": "Jugador",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Cansancio por Doble Competencia",
+    "descripcion": "El plantel está exhausto por la seguidilla de partidos entre copa y torneo local. Piden el jueves libre para descansar.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Darles descanso",
+        "afectadosPositivo": {
+          "vestuario": "Media"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Baja",
+          "hinchas": "Baja"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Entrenar duro",
+        "afectadosPositivo": {
+          "dirigencia": "Alta",
+          "fama": "Baja"
+        },
+        "afectadosNegativo": {
+          "vestuario": "Alta"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "vestuario",
+    "imagen": "player.PNG"
+  },
+  {
+    "idCarta": 2,
+    "tipo": "Dirigencia",
+    "personaje": "Dirigente",
+    "expectativasPermitidas": [
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Oferta Millonaria por la Promesa",
+    "descripcion": "Llegó una oferta millonaria desde Europa por nuestra joven estrella a mitad de torneo. La dirigencia presiona para hacer caja.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Venderlo ya",
+        "afectadosPositivo": {
+          "dirigencia": "Alta"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Media",
+          "vestuario": "Media"
+        },
+        "impactoFinanzas": 5000000
+      },
+      "opcion2": {
+        "texto": "Retenerlo en el club",
+        "afectadosPositivo": {
+          "hinchas": "Alta",
+          "vestuario": "Media"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Baja"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "dirigencia",
+    "imagen": "dirigente.PNG"
+  },
+  {
+    "idCarta": 3,
+    "tipo": "Prensa",
+    "personaje": "Easton Gdul",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Rumores en el Cuerpo Médico",
+    "descripcion": "En conferencia de prensa preguntan con insistencia: '¿Es cierto que hay una pésima relación entre usted y el cuerpo médico por las lesiones?'",
+    "opciones": {
+      "opcion1": {
+        "texto": "Desmentir todo",
+        "afectadosPositivo": {
+          "vestuario": "Baja",
+          "dirigencia": "Alta"
+        },
+        "afectadosNegativo": {
+          "fama": "Alta"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Criticar a los médicos",
+        "afectadosPositivo": {
+          "fama": "Baja"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Baja",
+          "vestuario": "Baja"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "prensa",
+    "imagen": "prensa.PNG"
+  },
+  {
+    "idCarta": 4,
+    "tipo": "Hinchada",
+    "personaje": "Hincha",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Apriete por Entradas",
+    "descripcion": "La barra intercepta la salida del entrenamiento exigiendo 200 entradas para el próximo partido o 'se vuelven a pata'.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Ceder y entregar entradas",
+        "afectadosPositivo": {
+          "hinchas": "Alta"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Baja",
+          "prestigio": "Baja"
+        },
+        "impactoFinanzas": -200000
+      },
+      "opcion2": {
+        "texto": "Negarse rotundamente",
+        "afectadosPositivo": {
+          "dirigencia": "Alta",
+          "vestuario": "Alta",
+          "prestigio": "Baja"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Alta"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "hinchas",
+    "imagen": "hincha.PNG"
+  },
+  {
+    "idCarta": 5,
+    "tipo": "Prensa",
+    "personaje": "Cronista de Campo de Juego",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Polémica Arbitral al Aire",
+    "descripcion": "El árbitro cobró un penal inventado en el último minuto. Al salir del túnel el cronista te pone el micrófono para que hables de la AFA.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Destrozar al árbitro",
+        "afectadosPositivo": {
+          "hinchas": "Media",
+          "fama": "Baja"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Baja"
+        },
+        "impactoFinanzas": -100000
+      },
+      "opcion2": {
+        "texto": "Llamar a la calma",
+        "afectadosPositivo": {
+          "dirigencia": "Alta"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Media",
+          "fama": "Alta"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "prensa",
+    "imagen": "prensa.PNG"
+  },
+  {
+    "idCarta": 6,
+    "tipo": "Jugador",
+    "personaje": "Jugador",
+    "expectativasPermitidas": [
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Noche de Boliche Viral",
+    "descripcion": "Se viralizaron fotos del número 10 de fiesta hasta altas horas de la madrugada a 48 horas de un partido trascendental.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Separarlo del plantel",
+        "afectadosPositivo": {
+          "dirigencia": "Alta",
+          "hinchas": "Alta"
+        },
+        "afectadosNegativo": {
+          "vestuario": "Alta"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Multa interna y juega",
+        "afectadosPositivo": {
+          "vestuario": "Alta"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Baja",
+          "hinchas": "Media"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "vestuario",
+    "imagen": "player.PNG"
+  },
+  {
+    "idCarta": 7,
+    "tipo": "Dirigencia",
+    "personaje": "Dirigente",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Sponsor de Apuestas Online",
+    "descripcion": "Un casino online ofrece triplicar el patrocinio en el pecho de la camiseta, pero un sector de socios junta firmas para rechazarlo.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Firmar por los millones",
+        "afectadosPositivo": {
+          "dirigencia": "Alta"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Media",
+          "prestigio": "Baja"
+        },
+        "impactoFinanzas": 3000000
+      },
+      "opcion2": {
+        "texto": "Priorizar valores y rechazar",
+        "afectadosPositivo": {
+          "hinchas": "Media",
+          "prestigio": "Baja"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Baja"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "dirigencia",
+    "imagen": "dirigente.PNG"
+  },
+  {
+    "idCarta": 8,
+    "tipo": "Hinchada",
+    "personaje": "Hincha",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Banderazo Previo al partido",
+    "descripcion": "Las peñas del club solicitan abrir el estadio el sábado a la tarde para un banderazo multitudinario con bombos y banderas.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Abrir el estadio",
+        "afectadosPositivo": {
+          "hinchas": "Media",
+          "fama": "Baja"
+        },
+        "afectadosNegativo": {
+          "vestuario": "Baja",
+          "dirigencia": "Media"
+        },
+        "impactoFinanzas": -50000
+      },
+      "opcion2": {
+        "texto": "Mantener puertas cerradas",
+        "afectadosPositivo": {
+          "vestuario": "Baja"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Baja"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "hinchas",
+    "imagen": "hincha.PNG"
+  },
+  {
+    "idCarta": 9,
+    "tipo": "Prensa",
+    "personaje": "Conductor de TV Deportiva",
+    "expectativasPermitidas": [
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Invitación a 'El Loco y el Cuerdo'",
+    "descripcion": "El programa de debate más picante del país te invita a su estudio en vivo para un mano a mano sin filtro.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Aceptar e ir al choque",
+        "afectadosPositivo": {
+          "fama": "Baja",
+          "hinchas": "Media"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Media",
+          "vestuario": "Media",
+          "prestigio": "Baja"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Rechazar y mantener perfil bajo",
+        "afectadosPositivo": {
+          "vestuario": "Media"
+        },
+        "afectadosNegativo": {
+          "fama": "Alta"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "prensa",
+    "imagen": "prensa.PNG"
+  },
+  {
+    "idCarta": 10,
+    "tipo": "Jugador",
+    "personaje": "Jugador",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas"
+    ],
+    "tituloCarta": "El Pibe Exige Titularidad",
+    "descripcion": "La joya de la reserva y su agente amenazan con no renovar contrato si no es titular en el próximo encuentro de primera.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Ponerlo de titular",
+        "afectadosPositivo": {
+          "hinchas": "Media",
+          "fama": "Baja"
+        },
+        "afectadosNegativo": {
+          "vestuario": "Media"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Bajarlo a reserva",
+        "afectadosPositivo": {
+          "vestuario": "Media"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Media",
+          "dirigencia": "Media"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "vestuario",
+    "imagen": "player.PNG"
+  },
+  {
+    "idCarta": 11,
+    "tipo": "Dirigencia",
+    "personaje": "Dirigente",
+    "expectativasPermitidas": [
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Gira Relámpago en Fecha FIFA",
+    "descripcion": "Propuesta para jugar un amistoso en Medio Oriente por 1.5 millones de dólares, aunque implica un viaje agotador de 30 horas.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Aceptar los dólares",
+        "afectadosPositivo": {
+          "dirigencia": "Media"
+        },
+        "afectadosNegativo": {
+          "vestuario": "Alta"
+        },
+        "impactoFinanzas": 1500000
+      },
+      "opcion2": {
+        "texto": "Priorizar el descanso físico",
+        "afectadosPositivo": {
+          "vestuario": "Alta"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Media"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "dirigencia",
+    "imagen": "dirigente.PNG"
+  },
+  {
+    "idCarta": 12,
+    "tipo": "Hinchada",
+    "personaje": "Hincha",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Insultos durante el partido",
+    "descripcion": "Hay un plateísta al lado del banco de suplentes que no para de insultarte, está a metros de la cámara de TV. Pensás en responderle.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Responder con complicidad",
+        "afectadosPositivo": {
+          "hinchas": "Baja",
+          "fama": "Baja"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Media"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Insultarlo",
+        "afectadosPositivo": {
+          "fama": "Baja"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Baja",
+          "dirigencia": "Media",
+          "prestigio": "Baja"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "hinchas",
+    "imagen": "hincha.PNG"
+  },
+  {
+    "idCarta": 13,
+    "tipo": "Prensa",
+    "personaje": "Periodista de Radio",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Filtración del Once Titular",
+    "descripcion": "El once titular que practicaste a puertas cerradas fue revelado en la radio matutina. Todo apunta a una infidencia interna.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Cambiar esquema a último momento",
+        "afectadosPositivo": {
+          "fama": "Media",
+          "hinchas": "Media"
+        },
+        "afectadosNegativo": {
+          "vestuario": "Media"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Sostener el equipo y buscar al topo",
+        "afectadosPositivo": {
+          "vestuario": "Media",
+          "dirigencia": "Media"
+        },
+        "afectadosNegativo": {
+          "fama": "Alta"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "prensa",
+    "imagen": "prensa.PNG"
+  },
+  {
+    "idCarta": 14,
+    "tipo": "Jugador",
+    "personaje": "Jugador",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Minutos en la Copa",
+    "descripcion": "El arquero suplente lleva un año sin jugar un minuto oficial y solicita formalmente atajar en el cruce de eliminación directa.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Darle la titularidad en Copa",
+        "afectadosPositivo": {
+          "vestuario": "Baja"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Baja"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Mantener al titular indiscutido",
+        "afectadosPositivo": {
+          "hinchas": "Baja"
+        },
+        "afectadosNegativo": {
+          "vestuario": "Baja"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "vestuario",
+    "imagen": "player.PNG"
+  },
+  {
+    "idCarta": 15,
+    "tipo": "Dirigencia",
+    "personaje": "Dirigente",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Software de Scouting y Métricas",
+    "descripcion": "La secretaría técnica pide un presupuesto de $400.000 para licenciar una plataforma europea de videoanálisis y datos estadísticos.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Aprobar la inversión tecnológica",
+        "afectadosPositivo": {
+          "dirigencia": "Media",
+          "prestigio": "Baja"
+        },
+        "afectadosNegativo": {
+          "vestuario": "Baja"
+        },
+        "impactoFinanzas": -400000
+      },
+      "opcion2": {
+        "texto": "Apostar al ojo del entrenador",
+        "afectadosPositivo": {
+          "vestuario": "Baja"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Media"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "dirigencia",
+    "imagen": "dirigente.PNG"
+  },
+  {
+    "idCarta": 16,
+    "tipo": "Hinchada",
+    "personaje": "Hincha",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias"
+    ],
+    "tituloCarta": "Asado Político en Año Electoral",
+    "descripcion": "La agrupación que disputa la conducción del club te invita a un asado para manifestarte su apoyo a cambio de fotos con sus candidatos.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Asistir y criticar a la gestión",
+        "afectadosPositivo": {
+          "hinchas": "Alta",
+          "fama": "Media"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Media"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Mantener total neutralidad",
+        "afectadosPositivo": {
+          "dirigencia": "Media"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Alta",
+          "fama": "Alta"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "hinchas",
+    "imagen": "hincha.PNG"
+  },
+  {
+    "idCarta": 17,
+    "tipo": "Prensa",
+    "personaje": "Panelista Estrella de YtC Sports",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Ataque al Estilo de Juego",
+    "descripcion": "El panelista más ruidoso del mediodía dice que tu equipo 'es mezquino, aburrido y traiciona la rica historia de la institución'.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Llamar al programa y discutir al aire",
+        "afectadosPositivo": {
+          "fama": "Media"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Media"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Ignorar y declarar que mandan los puntos",
+        "afectadosPositivo": {
+          "vestuario": "Media"
+        },
+        "afectadosNegativo": {
+          "fama": "Alta"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "prensa",
+    "imagen": "prensa.PNG"
+  },
+  {
+    "idCarta": 18,
+    "tipo": "Jugador",
+    "personaje": "Jugador",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Una sutil recomendación",
+    "descripcion": "Resulta que en un día de entrenamiento, luego de perder 3 partidos seguidos, el 10 estaba practicando pegarle al arco y el segundo entrenador le recomendó que cerrara más el pie. Ahora está re caliente y va a hablar con vos. 'Que el rubio ese no me hable más', sentenció.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Pedirle perdón",
+        "afectadosPositivo": {
+          "vestuario": "Baja"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Media",
+          "prestigio": "Baja"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Bancar a tu cuerpo técnico",
+        "afectadosPositivo": {
+          "dirigencia": "Media",
+          "prestigio": "Baja"
+        },
+        "afectadosNegativo": {
+          "vestuario": "Baja"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "vestuario",
+    "imagen": "player.PNG"
+  },
+  {
+    "idCarta": 19,
+    "tipo": "Jugador",
+    "personaje": "Jugador",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Piñas en el vestuario",
+    "descripcion": "Al finalizar el partido, el 5 estaba exaltado con el arquero (que cometió un error que costó el partido). En el ínterin, revoleó un botín y le pegó a un pibe que apenas debutaba. Pero el pibe no se come una y luego de una discusión acalorada se fue a las manos con el 5 y se armó el tole tole.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Suspender al 5",
+        "afectadosPositivo": {
+          "dirigencia": "Media",
+          "prestigio": "Baja"
+        },
+        "afectadosNegativo": {
+          "vestuario": "Media"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Borrar al pibe",
+        "afectadosPositivo": {
+          "vestuario": "Media"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Media",
+          "hinchas": "Media"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "vestuario",
+    "imagen": "player.PNG"
+  },
+  {
+    "idCarta": 20,
+    "tipo": "Hinchada",
+    "personaje": "Hincha",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Magia negra",
+    "descripcion": "Cuando llegaste al banco de suplentes, todos los plateístas te advierten de algo: alguien había tirado sal gruesa al lado del banco para mufarte.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Ignorarlo, sos un tipo serio.",
+        "afectadosPositivo": {
+          "dirigencia": "Media"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Baja",
+          "fama": "Alta"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Mandar al segundo a buscar azúcar",
+        "afectadosPositivo": {
+          "hinchas": "Baja",
+          "fama": "Media"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Media"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "hinchas",
+    "imagen": "hincha.PNG"
+  },
+  {
+    "idCarta": 21,
+    "tipo": "Jugador",
+    "personaje": "Jugador",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Cambio en el equipo titular",
+    "descripcion": "El 9 titular viene en mala racha: 15 partidos sin goles. No le hace un gol ni al arcoíris. Hay un pibe en la reserva que viene haciendo goles todos los partidos.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Poner al pibe",
+        "afectadosPositivo": {
+          "hinchas": "Media",
+          "prestigio": "Media"
+        },
+        "afectadosNegativo": {
+          "vestuario": "Media"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Bancar al 9",
+        "afectadosPositivo": {
+          "vestuario": "Media"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Media"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "vestuario",
+    "imagen": "player.PNG"
+  },
+  {
+    "idCarta": 22,
+    "tipo": "Dirigencia",
+    "personaje": "Dirigente",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Pedido de apoyo",
+    "descripcion": "El presidente te llama para pedirte que en conferencia de prensa banques la candidatura a presidente de la AFA de Bauricio Bacri. Pero la hinchada lo odia porque ese lo acusa de que viene a privatizar el fútbol.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Mantenerse al margen, no te metés en política.",
+        "afectadosPositivo": {
+          "hinchas": "Alta"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Media"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Hablar en favor de Bacri",
+        "afectadosPositivo": {
+          "dirigencia": "Media"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Alta",
+          "prestigio": "Baja"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "dirigencia",
+    "imagen": "dirigente.PNG"
+  },
+  {
+    "idCarta": 23,
+    "tipo": "Dirigencia",
+    "personaje": "Dirigente",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Solicitud inaceptable",
+    "descripcion": "Estás en una encrucijada, el presidente de tu club recibió una llamada de el excéntrico presidente de la AFA 'chick chick type' con un pedido simple: 'Tenés que perder el próximo partido o no ganás nunca más'.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Ir al frente y que pase lo que pase.",
+        "afectadosPositivo": {
+          "hinchas": "Alta",
+          "vestuario": "Alta",
+          "prestigio": "Baja"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Media"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Dejarse ganar.",
+        "afectadosPositivo": {
+          "dirigencia": "Media"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Alta",
+          "vestuario": "Alta",
+          "prestigio": "Baja"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "dirigencia",
+    "imagen": "dirigente.PNG"
+  },
+  {
+    "idCarta": 24,
+    "tipo": "Hinchada",
+    "personaje": "Hincha",
+    "expectativasPermitidas": [
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Alta traición",
+    "descripcion": "Fuiste a un programa de streaming, bajaste la guardia y cuando te descuidaste te hicieron tomar de una taza con el escudo del clasico rival. La hinchada está furiosa.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Bajarle el precio, es una boludez.",
+        "afectadosPositivo": {
+          "fama": "Media"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Alta"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Pedir disculpas y no volver a ir a programas de streaming.",
+        "afectadosPositivo": {
+          "hinchas": "Alta"
+        },
+        "afectadosNegativo": {
+          "fama": "Alta"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "hinchas",
+    "imagen": "hincha.PNG"
+  },
+  {
+    "idCarta": 25,
+    "tipo": "Prensa",
+    "personaje": "Rueda de prensa",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Error gramatical",
+    "descripcion": "Llegaste a la rueda de prensa cansadísimo y cuando hablabas del 4 titular le cambiaste el apellido. Todos rieron, menos él; está indignado y quiere dejar el club.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Pedirle disculpas en público",
+        "afectadosPositivo": {
+          "vestuario": "Media"
+        },
+        "afectadosNegativo": {
+          "fama": "Media"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Dejar que rescinda el contrato",
+        "afectadosPositivo": {
+          "fama": "Media"
+        },
+        "afectadosNegativo": {
+          "vestuario": "Alta",
+          "hinchas": "Alta",
+          "dirigencia": "Media",
+          "prestigio": "Baja"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "prensa",
+    "imagen": "prensa.PNG"
+  },
+  {
+    "idCarta": 26,
+    "tipo": "Dirigencia",
+    "personaje": "Dirigente",
+    "expectativasPermitidas": [
+      "Ascenso",
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Jugada sucia",
+    "descripcion": "El presidente te informa que llamó el representante de Bruno Mercenarini, Enzo Garqueti. Bruno es un volante que contrató la dirigencia anterior y está cobrando una fortuna hace 4 años sin jugar, Garqueti dice que no pudo encontrarle un equipo. Tenés bien en claro que es una jugada sucia y que en realidad nunca buscó uno. Pensás en rescindirle el contrato, pero es más barato que se quede y pagarle el sueldo.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Rescindirle el contrato y armar un escándalo. No jode más.",
+        "afectadosPositivo": {
+          "hinchas": "Alta",
+          "fama": "Media",
+          "prestigio": "Media"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Media"
+        },
+        "impactoFinanzas": -400000
+      },
+      "opcion2": {
+        "texto": "Dejar que siga cobrando. Un mal menor.",
+        "afectadosPositivo": {
+          "dirigencia": "Media"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Alta",
+          "prestigio": "Baja"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "dirigencia",
+    "imagen": "dirigente.PNG"
+  },
+  {
+    "idCarta": 27,
+    "tipo": "Dirigencia",
+    "personaje": "Dirigente",
+    "expectativasPermitidas": [
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Naming",
+    "descripcion": "Llego una oferta de una importante cadena de supermercados para cambiar el nombre del estadio. La oferta es jugosa pero a los hinchas los van a cargar toda la vida.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Aceptar",
+        "afectadosPositivo": {
+          "dirigencia": "Media"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Media"
+        },
+        "impactoFinanzas": 2000000
+      },
+      "opcion2": {
+        "texto": "Rechazar",
+        "afectadosPositivo": {
+          "hinchas": "Media"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Media"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "dirigencia",
+    "imagen": "dirigente.PNG"
+  },
+  {
+    "idCarta": 28,
+    "tipo": "Dirigencia",
+    "personaje": "Dirigente",
+    "expectativasPermitidas": [
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "La joya asiatica",
+    "descripcion": "El presidente te llama una mañana con un pedido, tenes que gestionar el fichaje de Shin Nyungol, el futbolista estrella de la liga de Camboya. Lo cierto es que el muchacho no tiene nivel ni para la reserva, pero es el jugador protegido del principal sponsor del club.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Ficharlo",
+        "afectadosPositivo": {
+          "dirigencia": "Media"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Media",
+          "vestuario": "Media"
+        },
+        "impactoFinanzas": 4000000
+      },
+      "opcion2": {
+        "texto": "Rechazar",
+        "afectadosPositivo": {
+          "hinchas": "Alta",
+          "vestuario": "Media"
+        },
+        "afectadosNegativo": {
+          "dirigencia": "Media"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "dirigencia",
+    "imagen": "dirigente.PNG"
+  },
+  {
+    "idCarta": 29,
+    "tipo": "Jugador",
+    "personaje": "Jugador",
+    "expectativasPermitidas": [
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Vacaciones",
+    "descripcion": "Tenes una semana libre de partidos y los jugadores te piden vacaciones.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Acceder a sus peticiones",
+        "afectadosPositivo": {
+          "vestuario": "Alta"
+        },
+        "afectadosNegativo": {
+          "hinchas": "Media"
+        },
+        "impactoFinanzas": 0
+      },
+      "opcion2": {
+        "texto": "Rechazar",
+        "afectadosPositivo": {
+          "hinchas": "Media"
+        },
+        "afectadosNegativo": {
+          "vestuario": "Alta"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "jugador",
+    "imagen": "jugador.PNG"
+  },
+  {
+    "idCarta": 30,
+    "tipo": "Jugador",
+    "personaje": "Jugador",
+    "expectativasPermitidas": [
+      "Bajas",
+      "Medias",
+      "Altas",
+      "Gigante"
+    ],
+    "tituloCarta": "Victoria importante",
+    "descripcion": "Ganaste un partido importante y los jugadores te piden un bono.",
+    "opciones": {
+      "opcion1": {
+        "texto": "Acceder a sus peticiones",
+        "afectadosPositivo": {
+          "vestuario": "Alta"
+        },
+        "afectadosNegativo": {},
+        "impactoFinanzas": -500000
+      },
+      "opcion2": {
+        "texto": "Rechazar",
+        "afectadosPositivo": {
+          "dirigencia": "Media"
+        },
+        "afectadosNegativo": {
+          "vestuario": "Alta"
+        },
+        "impactoFinanzas": 0
+      }
+    },
+    "faccion": "jugador",
+    "imagen": "jugador.PNG"
+  }
+]

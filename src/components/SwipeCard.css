@@ -1,0 +1,260 @@
+.swipe-container {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem 0.75rem 0.6rem;
+  overflow: hidden;
+  position: relative;
+  min-height: 0;
+}
+
+.club-ambient-gradient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card-stack {
+  position: relative;
+  width: 100%;
+  max-width: 295px;
+  height: clamp(450px, 64vh, 495px);
+  z-index: 2;
+}
+
+.game-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  background-color: #FAF6EE;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(63, 58, 58, 0.25);
+  border: 2px solid #3F3A3A;
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ==========================================================
+   ESTILOS VISUALES PARA CARTAS ESPECIALES
+   ========================================================== */
+.game-card.is-special {
+  border: 2.5px solid #D4AF37;
+  box-shadow: 
+    0 0 0 1.5px #8C6D23 inset,
+    0 0 25px rgba(212, 175, 55, 0.45),
+    0 18px 40px rgba(63, 58, 58, 0.35);
+}
+
+@keyframes specialGoldPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 0 1.5px #8C6D23 inset,
+      0 0 22px rgba(212, 175, 55, 0.4),
+      0 18px 40px rgba(63, 58, 58, 0.35);
+  }
+  50% {
+    box-shadow: 
+      0 0 0 2px #F3E5AB inset,
+      0 0 35px rgba(243, 229, 171, 0.7),
+      0 20px 45px rgba(63, 58, 58, 0.45);
+  }
+}
+
+.active-card.is-special {
+  animation: specialGoldPulse 3.5s ease-in-out infinite;
+}
+
+/* Filigranas en las esquinas de cartas especiales */
+.corner-filigree {
+  position: absolute;
+  color: #D4AF37;
+  font-size: 0.95rem;
+  line-height: 1;
+  z-index: 15;
+  pointer-events: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  user-select: none;
+}
+
+.corner-filigree.top-left { top: 9px; left: 9px; }
+.corner-filigree.top-right { top: 9px; right: 9px; }
+.corner-filigree.bottom-left { bottom: 9px; left: 9px; }
+.corner-filigree.bottom-right { bottom: 9px; right: 9px; }
+
+/* Cinta / Ribbon superior de carta especial */
+.special-card-ribbon {
+  position: absolute;
+  top: 13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #2E2725 0%, #1A1717 100%);
+  border: 1.5px solid #D4AF37;
+  color: #F4E8C1;
+  font-family: var(--font-serif);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 16;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.ribbon-star {
+  color: #D4AF37;
+  font-size: 0.72rem;
+}
+
+.ribbon-next {
+  opacity: 0.9;
+  transform: translateX(-50%) scale(0.9);
+}
+
+.next-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0.95) translateY(10px);
+  z-index: 1;
+  filter: brightness(0.85);
+  border-color: #6E5B5B;
+}
+
+.next-card.is-special {
+  border-color: #D4AF37;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.active-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  cursor: grab;
+  will-change: transform;
+}
+
+.active-card:active {
+  cursor: grabbing;
+}
+
+.card-character-image {
+  flex: 1;
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emoji-avatar {
+  font-size: 6rem;
+  filter: drop-shadow(0 10px 10px rgba(63, 58, 58, 0.2));
+}
+
+.card-content {
+  padding: 1.4rem 1.15rem 0.95rem;
+  background: linear-gradient(
+    to top, 
+    rgba(250, 246, 238, 1) 0%, 
+    rgba(250, 246, 238, 0.98) 55%, 
+    rgba(250, 246, 238, 0.82) 75%, 
+    rgba(250, 246, 238, 0.25) 92%, 
+    transparent 100%
+  );
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.game-card.is-special .card-content {
+  background: linear-gradient(
+    to top, 
+    rgba(250, 246, 238, 1) 0%, 
+    rgba(255, 250, 238, 0.98) 52%, 
+    rgba(246, 233, 200, 0.85) 75%, 
+    rgba(246, 233, 200, 0.25) 92%, 
+    transparent 100%
+  );
+}
+
+.card-character {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: #3F3A3A;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+.game-card.is-special .card-character {
+  color: #2F2929;
+  text-shadow: 0 0 1px rgba(160, 122, 56, 0.3);
+}
+
+.card-situation {
+  font-size: 0.85rem;
+  line-height: 1.38;
+  color: #2A2525;
+  font-weight: 500;
+}
+
+.swipe-hint {
+  position: absolute;
+  top: 1.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 2.5px solid;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 20;
+  pointer-events: none;
+  background: #FAF6EE;
+  box-shadow: 0 8px 24px rgba(63, 58, 58, 0.25);
+  max-width: 85%;
+  text-align: center;
+}
+
+.hint-left {
+  left: 1rem;
+  color: #9C3838;
+  border-color: #9C3838;
+  transform: rotate(-10deg);
+}
+
+.hint-right {
+  right: 1rem;
+  color: #3E6B39;
+  border-color: #3E6B39;
+  transform: rotate(10deg);
+}
+
+.swipe-hint.visible {
+  opacity: 1;
+}
+
+.text-muted {
+  color: #6E5B5B;
+  font-weight: 700;
+}

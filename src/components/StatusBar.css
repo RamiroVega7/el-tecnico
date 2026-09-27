@@ -1,0 +1,288 @@
+.status-bar-container {
+  width: 100%;
+  padding: 0.35rem 0.75rem 0;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+/* Header superior: Club, Objetivo, DT y Temporada */
+.game-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.28rem 0.65rem;
+  margin-bottom: 0.25rem;
+  border-radius: 9px;
+  background: #FAF6EE;
+  border: 1.5px solid #3F3A3A;
+  box-shadow: 0 2px 6px rgba(63, 58, 58, 0.08);
+}
+
+.game-header-club {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.club-header-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1.5px solid #3F3A3A;
+  box-shadow: 0 0 3px currentColor;
+  flex-shrink: 0;
+}
+
+.club-header-texts {
+  display: flex;
+  flex-direction: column;
+}
+
+.club-header-name {
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #3F3A3A;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.club-header-objective {
+  font-size: 0.58rem;
+  color: #6E5B5B;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.game-header-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.1rem;
+}
+
+.manager-pill {
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: #3F3A3A;
+}
+
+.season-pill {
+  font-size: 0.56rem;
+  font-weight: 600;
+  color: #6E5B5B;
+}
+
+/* 3 Facciones Principales */
+.factions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.35rem 0.6rem 0.35rem;
+  background: #FAF6EE;
+  border: 1.5px solid #3F3A3A;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(63, 58, 58, 0.08);
+}
+
+.faction-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  margin: 0 0.2rem;
+}
+
+.icon-wrapper {
+  position: relative;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+  transition: all 0.3s ease;
+  background: #FFFFFF;
+  border: 1.5px solid #6E5B5B;
+}
+
+.value-badge {
+  position: absolute;
+  top: -0.2rem;
+  right: -0.2rem;
+  font-size: 0.55rem;
+  font-weight: 700;
+  background-color: #3F3A3A;
+  color: #E4D5B7;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #3F3A3A;
+}
+
+.progress-track {
+  width: 100%;
+  height: 0.28rem;
+  background-color: #E2D7C3;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(63, 58, 58, 0.15);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.faction-label {
+  font-size: 0.54rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.2rem;
+  color: #3F3A3A;
+  font-weight: 700;
+}
+
+/* Métricas Secundarias: Finanzas y Barras */
+.metrics-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.35rem 0.65rem;
+  margin-top: 0.25rem;
+  background: #FAF6EE;
+  border: 1.5px solid #3F3A3A;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(63, 58, 58, 0.08);
+}
+
+/* Columna Izquierda: Finanzas */
+.finance-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+.finance-header {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 0.05rem;
+}
+
+.finance-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 4px;
+  background: #E4D5B7;
+  border: 1px solid #6E5B5B;
+}
+
+.finance-label {
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6E5B5B;
+  font-weight: 700;
+}
+
+.finance-amount {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #3F3A3A;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+.finance-exact {
+  font-size: 0.58rem;
+  color: #6E5B5B;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Divisor central */
+.metrics-divider {
+  width: 1.5px;
+  align-self: stretch;
+  min-height: 2.3rem;
+  background: #6E5B5B;
+  opacity: 0.3;
+  flex-shrink: 0;
+}
+
+/* Columna Derecha: Prestigio, Idolatría y Fama apilados */
+.metrics-bars-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.horizontal-metric {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.metric-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  background: #E4D5B7;
+  border: 1px solid #6E5B5B;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.metric-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  min-width: 0;
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.metric-label {
+  font-size: 0.54rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6E5B5B;
+  font-weight: 700;
+}
+
+.metric-value {
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #3F3A3A;
+}
+
+.horizontal-track {
+  height: 0.24rem;
+}

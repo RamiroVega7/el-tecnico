@@ -1,0 +1,207 @@
+.difficulty-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 1.25rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Custom Scrollbar */
+.difficulty-screen::-webkit-scrollbar {
+  width: 4px;
+}
+.difficulty-screen::-webkit-scrollbar-thumb {
+  background: rgba(110, 91, 91, 0.4);
+  border-radius: 99px;
+}
+
+/* Header */
+.difficulty-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3F3A3A;
+  background: #FAF6EE;
+  border: 1.5px solid #3F3A3A;
+  padding: 0.25rem 0.65rem;
+  border-radius: 99px;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-serif);
+  box-shadow: 0 2px 6px rgba(63, 58, 58, 0.08);
+}
+
+.game-title-main {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #3F3A3A;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+}
+
+.difficulty-subtitle {
+  font-size: 0.88rem;
+  color: #6E5B5B;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Cards List */
+.difficulty-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: auto 0;
+}
+
+.difficulty-card {
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #FAF6EE;
+  border: 1.5px solid #6E5B5B;
+  border-radius: 14px;
+}
+
+.difficulty-card:hover {
+  transform: translateY(-2px);
+  border-color: #3F3A3A;
+  background: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(63, 58, 58, 0.16);
+}
+
+.difficulty-card.selected {
+  background: #FFFFFF;
+  border: 2px solid #3F3A3A;
+}
+
+.diff-card-content {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.diff-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid;
+  flex-shrink: 0;
+}
+
+.diff-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.diff-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.diff-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #3F3A3A;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.diff-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+  border: 1.5px solid;
+  letter-spacing: 0.02em;
+}
+
+.diff-subtitle {
+  font-size: 0.82rem;
+  color: #6E5B5B;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.diff-check-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+/* Footer / Actions */
+.difficulty-actions {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-continue-difficulty {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: #3F3A3A;
+  color: #E4D5B7;
+  border: 2px solid #3F3A3A;
+  padding: 0.85rem 1.5rem;
+  border-radius: 12px;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(63, 58, 58, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-continue-difficulty:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #524B4B;
+  color: #FAF6EE;
+  box-shadow: 0 6px 20px rgba(63, 58, 58, 0.35);
+}
+
+.btn-continue-difficulty:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-continue-difficulty:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}

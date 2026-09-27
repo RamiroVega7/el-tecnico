@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Requested Color Palette */
+  --color-1: #E4D5B7;
+  --color-2: #C9B79C;
+  --color-3: #A78A7F;
+  --color-4: #6E5B5B;
+  --color-5: #3F3A3A;
+
+  --color1: #E4D5B7;
+  --color2: #C9B79C;
+  --color3: #A78A7F;
+  --color4: #6E5B5B;
+  --color5: #3F3A3A;
+
+  /* Fonts */
+  --font-serif: 'Cinzel', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Inverted Theme: Light background, Dark borders & text */
+  --bg-dark: #FAF6EE; /* Primary light background for cards/panels */
+  --bg-page: #E4D5B7; /* Light parchment base */
+  --bg-gradient: linear-gradient(155deg, #EFE6D5 0%, #DFD0B2 100%);
+  --bg-card: #FAF6EE;
+  --bg-card-subtle: #F3EBDD;
+  
+  --glass-bg: rgba(250, 246, 238, 0.92);
+  --glass-border: #6E5B5B;
+  
+  --text-main: #3F3A3A;
+  --text-primary: #2A2525;
+  --text-muted: #6E5B5B;
+  --text-subtle: #8A776F;
+  
+  --border-dark: #3F3A3A;
+  --border-card: #6E5B5B;
+  --border-subtle: rgba(110, 91, 91, 0.25);
+  
+  --accent-color: #3F3A3A;
+  --accent-gold: #A07A38;
+  --danger-color: #9C3838;
+  --success-color: #3E6B39;
+  
+  /* Rich elegant dark faction tones for light tracks */
+  --vestuario-color: #A66248;
+  --dirigencia-color: #A07A38;
+  --hinchas-color: #4E7355;
+  --prensa-color: #6E5B5B;
+}
+
+/* User specified utility color classes */
+.color1 { color: #E4D5B7; }
+.color2 { color: #C9B79C; }
+.color3 { color: #A78A7F; }
+.color4 { color: #6E5B5B; }
+.color5 { color: #3F3A3A; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  max-width: 480px;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.7), transparent 60%), #E5D6B8;
+  box-shadow: 0 0 40px rgba(63, 58, 58, 0.15);
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid var(--border-dark);
+  border-radius: 14px;
+}
+
+/* Subtle elegant pulse */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 8px rgba(63, 58, 58, 0.15); }
+  50% { box-shadow: 0 0 16px rgba(63, 58, 58, 0.3); }
+  100% { box-shadow: 0 0 8px rgba(63, 58, 58, 0.15); }
+}
+
+.game-over-screen {
+  position: absolute;
+  inset: 0;
+  background: rgba(250, 246, 238, 0.96);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 2rem;
+  text-align: center;
+}
+
+.game-over-screen h1 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  color: #3F3A3A;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.btn-primary {
+  background: #3F3A3A;
+  color: #E4D5B7;
+  border: 2px solid #3F3A3A;
+  padding: 0.8rem 2.2rem;
+  border-radius: 99px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  margin-top: 2rem;
+  box-shadow: 0 4px 14px rgba(63, 58, 58, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #524B4B;
+  color: #FAF6EE;
+  box-shadow: 0 6px 20px rgba(63, 58, 58, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}

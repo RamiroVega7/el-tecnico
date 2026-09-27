@@ -1,0 +1,237 @@
+.match-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(30, 26, 26, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.match-modal-container {
+  width: 100%;
+  max-width: 380px;
+  background-color: #FAF6EE;
+  border: 2px solid #3F3A3A;
+  border-radius: 20px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Header con cinta de competición */
+.match-competition-header {
+  background: linear-gradient(135deg, #3F3A3A 0%, #2A2525 100%);
+  color: #FAF6EE;
+  padding: 0.85rem 1rem 0.65rem;
+  text-align: center;
+  border-bottom: 2px solid #A07A38;
+}
+
+.competition-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.ribbon-sparkle {
+  color: #D4AF37;
+  font-size: 0.9rem;
+}
+
+.competition-title {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #F4E8C1;
+  text-transform: uppercase;
+}
+
+.competition-subtitle {
+  display: block;
+  font-size: 0.72rem;
+  color: #C9B79C;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-top: 0.2rem;
+}
+
+/* Marcador del estadio */
+.stadium-scoreboard {
+  background: #EFE6D5;
+  border-bottom: 1.5px solid #6E5B5B;
+  padding: 1.15rem 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.team-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 0;
+}
+
+.team-crest {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #3F3A3A;
+  box-shadow: 0 4px 10px rgba(63, 58, 58, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.4rem;
+}
+
+.team-name {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #2A2525;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 110px;
+}
+
+.team-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 0.2rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.user-badge {
+  background-color: #3F3A3A;
+  color: #FAF6EE;
+}
+
+.rival-badge {
+  background-color: #C9B79C;
+  color: #3F3A3A;
+}
+
+.score-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.score-numbers {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #2A2525;
+  color: #FAF6EE;
+  padding: 0.4rem 0.9rem;
+  border-radius: 10px;
+  border: 1.5px solid #A07A38;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.score-digit {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #F4E8C1;
+}
+
+.score-divider {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #A78A7F;
+}
+
+.match-time-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #9C3838;
+  letter-spacing: 0.08em;
+  margin-top: 0.4rem;
+}
+
+/* Banner de resultado */
+.result-banner {
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.banner-win {
+  background-color: #3E6B39;
+  color: #FFFFFF;
+  border-bottom: 2px solid #2B4E27;
+}
+
+.banner-loss {
+  background-color: #9C3838;
+  color: #FFFFFF;
+  border-bottom: 2px solid #752929;
+}
+
+.banner-icon {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Contenedor del Botón de Acción */
+.match-actions {
+  padding: 1.15rem 1.25rem 1.25rem;
+  background-color: #FAF6EE;
+  display: flex;
+  justify-content: center;
+}
+
+.match-continue-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #3F3A3A 0%, #2A2525 100%);
+  color: #FAF6EE;
+  border: 1.5px solid #A07A38;
+  border-radius: 12px;
+  padding: 0.85rem 1.2rem;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(63, 58, 58, 0.3);
+  transition: all 0.2s ease;
+}
+
+.match-continue-btn:hover {
+  background: linear-gradient(135deg, #4F4848 0%, #352F2F 100%);
+  border-color: #D4AF37;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(63, 58, 58, 0.4);
+}
+
+.match-continue-btn:active {
+  transform: translateY(0);
+}

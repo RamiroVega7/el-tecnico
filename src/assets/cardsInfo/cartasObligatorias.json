@@ -1,0 +1,139 @@
+{
+  "fichajes": [
+    {
+      "idCartaOb": 1001,
+      "turnoDeAparicion": 1,
+      "tipoDecision": "FichajeEstrella",
+      "esEspecial": true,
+      "expectativasPermitidas": [
+        "Ascenso",
+        "Bajas",
+        "Medias",
+        "Altas",
+        "Gigante"
+      ],
+      "tituloCarta": "Pedir Fichaje Estrella",
+      "descripcion": "El mercado de pases cierra en 24 horas. Tenés la posibilidad de exigirle a la dirigencia que rompan el chanchito por ese delantero de jerarquía que pediste.",
+      "opciones": {
+        "opcion1": {
+          "texto": "Exigir el fichaje",
+          "afectadosPositivo": {
+            "hinchas": "Alta",
+            "fama": "Media"
+          },
+          "afectadosNegativo": {
+            "dirigencia": "Alta"
+          },
+          "impactoFinancieroPorcentaje": -0.33,
+          "bonusProbClasico": 0.10,
+          "bonusProbPartidoFinal": 0.15
+        },
+        "opcion2": {
+          "texto": "Arreglarse con lo que hay",
+          "afectadosPositivo": {
+            "dirigencia": "Media"
+          },
+          "afectadosNegativo": {
+            "hinchas": "Media"
+          },
+          "impactoFinancieroPorcentaje": 0,
+          "bonusProbClasico": 0,
+          "bonusProbPartidoFinal": 0
+        }
+      },
+      "despliegaEventoEspecialInmediato": false,
+      "idEventoEspecialAsociado": null
+    }
+  ],
+  "previaClasico": [
+    {
+      "idCartaOb": 2001,
+      "turnoDeAparicion": 10,
+      "tipoDecision": "PreviaClasico",
+      "esEspecial": true,
+      "expectativasPermitidas": [
+        "Ascenso",
+        "Bajas",
+        "Medias",
+        "Altas",
+        "Gigante"
+      ],
+      "tituloCarta": "Conferencia Pre-Clásico",
+      "descripcion": "Semana de clásico. Los periodistas buscan sangre y te preguntan cómo ves al equipo rival que viene en racha ganadora.",
+      "opciones": {
+        "opcion1": {
+          "texto": "Boquearla (Son hijos nuestros)",
+          "afectadosPositivo": {
+            "fama": "Alta"
+          },
+          "afectadosNegativo": {
+            "dirigencia": "Media"
+          },
+          "impactoFinancieroPorcentaje": 0,
+          "bonusProbClasico": 0.05,
+          "bonusProbPartidoFinal": 0
+        },
+        "opcion2": {
+          "texto": "Perfil bajo (Son un gran rival)",
+          "afectadosPositivo": {
+            "dirigencia": "Baja"
+          },
+          "afectadosNegativo": {
+            "hinchas": "Baja"
+          },
+          "impactoFinancieroPorcentaje": 0,
+          "bonusProbClasico": 0,
+          "bonusProbPartidoFinal": 0
+        }
+      },
+      "despliegaEventoEspecialInmediato": true,
+      "idEventoEspecialAsociado": 1
+    }
+  ],
+  "dobleTurno": [
+    {
+      "idCartaOb": 3001,
+      "turnoDeAparicion": 19,
+      "tipoDecision": "DobleTurno",
+      "esEspecial": true,
+      "expectativasPermitidas": [
+        "Ascenso",
+        "Bajas",
+        "Medias",
+        "Altas",
+        "Gigante"
+      ],
+      "tituloCarta": "Semana Decisiva",
+      "descripcion": "Falta una fecha para el partido más importante del año. Podés concentrar al plantel toda la semana con doble turno para prepararlo mejor, aunque algunos referentes se van a quejar.",
+      "opciones": {
+        "opcion1": {
+          "texto": "Doble turno y concentración",
+          "afectadosPositivo": {
+            "hinchas": "Baja"
+          },
+          "afectadosNegativo": {
+            "vestuario": "Alta"
+          },
+          "impactoFinancieroPorcentaje": 0,
+          "bonusProbClasico": 0,
+          "bonusProbPartidoFinal": 0.10
+        },
+        "opcion2": {
+          "texto": "Entrenamiento normal",
+          "afectadosPositivo": {
+            "vestuario": "Alta"
+          },
+          "afectadosNegativo": {
+            "dirigencia": "Baja",
+            "hinchas": "Baja"
+          },
+          "impactoFinancieroPorcentaje": 0,
+          "bonusProbClasico": 0,
+          "bonusProbPartidoFinal": -0.10
+        }
+      },
+      "despliegaEventoEspecialInmediato": false,
+      "idEventoEspecialAsociado": 2
+    }
+  ]
+}
