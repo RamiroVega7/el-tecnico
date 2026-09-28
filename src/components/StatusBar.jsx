@@ -28,9 +28,9 @@ const FactionBar = ({ icon: Icon, value, color, label }) => {
   );
 };
 
-const HorizontalBar = ({ icon: Icon, value, color, label, isText, textValue }) => {
+const HorizontalBar = ({ icon: Icon, value, color, label, isText, textValue, warning }) => {
   return (
-    <div className="horizontal-metric">
+    <div className={`horizontal-metric ${warning ? 'metric-warning' : ''}`}>
       <div className="metric-icon" style={{ color: color, borderColor: color }}>
         <Icon size={11} />
       </div>
@@ -190,9 +190,9 @@ export const StatusBar = () => {
 
         {/* Columna Derecha: Barras apiladas de Prestigio, Idolatría y Fama */}
         <div className="metrics-bars-section">
-          <HorizontalBar icon={Trophy} value={prestigio} color="#A07A38" label="Prestigio" />
+          <HorizontalBar icon={Trophy} value={prestigio} color="#A07A38" label="Prestigio" warning={prestigio < 20} />
           <HorizontalBar icon={Crown} isText textValue={getIdolatriaLabel(idolatria)} color="#A66248" label="Idolatría" />
-          <HorizontalBar icon={Star} isText textValue={getFamaLabel(fama)} color="#6E5B5B" label="Fama" />
+          <HorizontalBar icon={Star} isText textValue={getFamaLabel(fama)} color="#6E5B5B" label="Fama" warning={fama < 35 || fama > 75} />
         </div>
       </div>
     </div>

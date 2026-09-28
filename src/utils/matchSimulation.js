@@ -21,7 +21,7 @@ const RIVALES_PARTIDO_FINAL = {
   ],
   Altas: [
     { NombreClub: 'Vélez Sarsfield', ColorPrincipal: '#0D47A1', Ciudad: 'Liniers' },
-    { NombreClub: 'Talleres de Córdoba', ColorPrincipal: '#0A192F', Ciudad: 'Córdoba' },
+    { NombreClub: 'Boca Juniors', ColorPrincipal: '#00458A', Ciudad: 'La Boca' },
     { NombreClub: 'Racing Club', ColorPrincipal: '#6CB3E4', Ciudad: 'Avellaneda' },
     { NombreClub: 'River Plate', ColorPrincipal: '#ED1B24', Ciudad: 'Núñez' }
   ],

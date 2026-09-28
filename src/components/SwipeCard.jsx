@@ -121,7 +121,7 @@ const hexToRgba = (hex, alpha = 1) => {
 };
 
 export const SwipeCard = ({ cards, onDeckEmpty }) => {
-  const { applyChanges, clubActual } = useGameStore();
+  const { applyChanges, clubActual, registrarCartaJugada } = useGameStore();
   const clubColor = clubActual?.ColorPrincipal || '#3F3A3A';
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [hint, setHint] = useState(null); // 'left' or 'right'
@@ -281,7 +281,10 @@ export const SwipeCard = ({ cards, onDeckEmpty }) => {
 
       // Apply card effects
       const selectedOption = direction === 'left' ? optLeft : optRight;
+      const opcionElegidaLabel = direction === 'left' ? 'A' : 'B';
       const changes = calculateModifiers(activeCard, selectedOption);
+
+      registrarCartaJugada(activeCard.id || activeCard.idCarta, opcionElegidaLabel);
 
       if (Object.keys(changes).length > 0) {
         applyChanges(changes);

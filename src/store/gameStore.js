@@ -3,6 +3,7 @@ import derrotas from '../assets/cardsInfo/derrotas.json';
 import initialCards from '../assets/cardsInfo/cards.json';
 import cartasObligatorias from '../assets/cardsInfo/cartasObligatorias.json';
 import clubsData from '../assets/cardsInfo/clubs.json';
+import { sendTelemetryEvent } from '../utils/telemetry';
 
 const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
 
@@ -65,6 +66,11 @@ export const useGameStore = create((set) => ({
   defeatId: null,
   defeatCard: null,
   offers: [],
+  
+  historialCarrera: [],
+  careerWon: false,
+  cartasJugadasTemporada: [],
+  turnoTemporada: 0,
 
   setDificultad: (dificultad) => set({ 
     dificultad, 
@@ -72,6 +78,11 @@ export const useGameStore = create((set) => ({
   }),
 
   setGamePhase: (gamePhase) => set({ gamePhase }),
+
+  registrarCartaJugada: (idCarta, opcionElegida) => set((state) => ({
+    turnoTemporada: state.turnoTemporada + 1,
+    cartasJugadasTemporada: [...state.cartasJugadasTemporada, { turno: state.turnoTemporada + 1, idCarta, opcionElegida }]
+  })),
 
   iniciarPartida: ({ club, nombreManager, nacionalidadManager }) => set({
     gamePhase: 'playing',
@@ -96,7 +107,59 @@ export const useGameStore = create((set) => ({
     resultadoClasico: 'pendiente',
     resultadoPartidoFinal: 'pendiente',
     objetivoCumplido: false,
-    offers: []
+    offers: [],
+    historialCarrera: [],
+    careerWon: false,
+    cartasJugadasTemporada: [],
+    turnoTemporada: 0
+  }),
+
+  finishSeason: () => set((state) => {
+    const newHistory = [...(state.historialCarrera || []), {
+      temporada: state.temporadaActual,
+      anio: state.anioActual,
+      club: state.clubActual?.NombreClub,
+      color: state.clubActual?.ColorPrincipal,
+      resultadoClasico: state.resultadoClasico,
+      resultadoPartidoFinal: state.resultadoPartidoFinal,
+      objetivoCumplido: state.objetivoCumplido,
+      prestigio: state.prestigio,
+      idolatria: state.idolatria,
+      finanzas: state.finanzas,
+      despedido: false,
+    }];
+    
+    if (state.temporadaActual >= 10) {
+      sendTelemetryEvent('temporada_terminada', {
+        resultado: "Supervivencia",
+        turnoFinal: state.turnoTemporada,
+        motivoFin: "fin_temporada",
+        faccionesAlFinalizar: state.factions,
+        cartasJugadas: state.cartasJugadasTemporada
+      });
+      return { 
+        historialCarrera: newHistory,
+        gamePhase: 'career_summary',
+        careerWon: true,
+        isGameOver: false,
+        cartasJugadasTemporada: [],
+        turnoTemporada: 0
+      };
+    }
+    
+    sendTelemetryEvent('temporada_terminada', {
+      resultado: "Supervivencia",
+      turnoFinal: state.turnoTemporada,
+      motivoFin: "fin_temporada",
+      faccionesAlFinalizar: state.factions,
+      cartasJugadas: state.cartasJugadasTemporada
+    });
+    return {
+      historialCarrera: newHistory,
+      gamePhase: 'season_summary',
+      cartasJugadasTemporada: [],
+      turnoTemporada: 0
+    };
   }),
 
   resolverClasico: () => set((state) => {
@@ -125,8 +188,8 @@ export const useGameStore = create((set) => ({
 
     for (const [key, value] of Object.entries(changes)) {
       if (newFactions[key] !== undefined) {
-        const mult = (state.fama < 35 || state.fama > 75) ? 2 : 1;
-        newFactions[key] = Math.max(0, Math.min(100, newFactions[key] + (value * mult)));
+        const mult = (state.fama < 35 || state.fama > 75) ? 1.5 : 1;
+        newFactions[key] = Math.max(0, Math.min(100, Math.round(newFactions[key] + (value * mult))));
         
         if (newFactions[key] <= 0) {
           isGameOver = true;
@@ -150,7 +213,7 @@ export const useGameStore = create((set) => ({
       if (key === 'fama') newFama = Math.max(0, Math.min(100, newFama + value));
       if (key === 'bonusProbClasico') newModificadorProbClasico += value;
       if (key === 'bonusProbPartidoFinal') newModificadorProbPartidoFinal += value;
-      if (key === 'impactoFinancieroPorcentaje') newFinanzas += state.finanzas * value;
+      if (key === 'impactoFinancieroPorcentaje') newFinanzas += (state.clubActual?.FinanzasInicial ?? 10000000) * value;
       
       if (key === 'finanzas') {
         const delta = (Math.abs(value) <= 100 && value !== 0) ? value * 1_000_000 : value;
@@ -162,6 +225,23 @@ export const useGameStore = create((set) => ({
       isGameOver = true;
       defeatId = 'FinanzasBancarrota';
       gameOverReason = "Despedido por bancarrota. El club se quedó sin fondos.";
+    }
+
+    let newHistorialCarrera = state.historialCarrera || [];
+    if (isGameOver) {
+      newHistorialCarrera = [...newHistorialCarrera, {
+        temporada: state.temporadaActual,
+        anio: state.anioActual,
+        club: state.clubActual?.NombreClub,
+        color: state.clubActual?.ColorPrincipal,
+        resultadoClasico: state.resultadoClasico,
+        resultadoPartidoFinal: state.resultadoPartidoFinal,
+        objetivoCumplido: false,
+        prestigio: newPrestigio,
+        idolatria: newIdolatria,
+        finanzas: newFinanzas,
+        despedido: true,
+      }];
     }
 
     let defeatCard = null;
@@ -183,6 +263,16 @@ export const useGameStore = create((set) => ({
       gameOverReason = defeatCard.titulo;
     }
     
+    if (!state.isGameOver && isGameOver) {
+      sendTelemetryEvent('temporada_terminada', {
+        resultado: "Derrota",
+        turnoFinal: state.turnoTemporada,
+        motivoFin: defeatId,
+        faccionesAlFinalizar: newFactions,
+        cartasJugadas: state.cartasJugadasTemporada
+      });
+    }
+
     return { 
       factions: newFactions, 
       prestigio: newPrestigio, 
@@ -194,7 +284,8 @@ export const useGameStore = create((set) => ({
       isGameOver, 
       gameOverReason,
       defeatId,
-      defeatCard
+      defeatCard,
+      historialCarrera: newHistorialCarrera
     };
   }),
 
@@ -218,9 +309,10 @@ export const useGameStore = create((set) => ({
     const allClubs = clubsData.filter(c => c.idClub !== state.idClubActual);
     let allowedExpectations = [];
     if (state.prestigio >= 80) allowedExpectations = ['Gigante', 'Altas'];
-    else if (state.prestigio >= 60) allowedExpectations = ['Altas', 'Medias'];
-    else if (state.prestigio >= 40) allowedExpectations = ['Medias', 'Bajas'];
-    else allowedExpectations = ['Bajas', 'Ascenso'];
+    else if (state.prestigio >= 70) allowedExpectations = ['Altas', 'Medias'];
+    else if (state.prestigio >= 60) allowedExpectations = ['Medias'];
+    else if (state.prestigio >= 30) allowedExpectations = ['Bajas'];
+    else allowedExpectations = ['Ascenso'];
 
     const filtered = allClubs.filter(c => allowedExpectations.includes(c.Expectativas));
     const randomClubs = shuffle(filtered).slice(0, 2);
@@ -251,7 +343,9 @@ export const useGameStore = create((set) => ({
           hinchas: Math.round((state.factions.hinchas + 50) / 2),
           prensa: Math.round((state.factions.prensa + 50) / 2),
         },
-        offers: []
+        offers: [],
+        cartasJugadasTemporada: [],
+        turnoTemporada: 0
       };
     } else {
       // Cambio de club
@@ -270,7 +364,9 @@ export const useGameStore = create((set) => ({
         resultadoClasico: 'pendiente',
         resultadoPartidoFinal: 'pendiente',
         objetivoCumplido: false,
-        offers: []
+        offers: [],
+        cartasJugadasTemporada: [],
+        turnoTemporada: 0
       };
     }
   }),
@@ -278,30 +374,9 @@ export const useGameStore = create((set) => ({
   handleDefeatAction: () => set((state) => {
     if (state.defeatId === 'PrestigioMin') {
       return {
-        gamePhase: 'difficulty',
-        dificultad: null,
-        clubActual: null,
-        idClubActual: null,
-        nombreManager: '',
-        nacionalidadManager: 'Argentina',
-        factions: { vestuario: 50, dirigencia: 50, hinchas: 50, prensa: 50 },
-        prestigio: 50,
-        idolatria: 0,
-        finanzas: 10000000,
-        fama: 50,
-        temporadaActual: 1,
-        anioActual: 2026,
-        isGameOver: false,
-        gameOverReason: "",
-        defeatId: null,
-        defeatCard: null,
-        deck: [],
-        modificadorProbClasico: 0,
-        modificadorProbPartidoFinal: 0,
-        resultadoClasico: 'pendiente',
-        resultadoPartidoFinal: 'pendiente',
-        objetivoCumplido: false,
-        offers: []
+        gamePhase: 'career_summary',
+        careerWon: false,
+        isGameOver: false
       };
     }
 
@@ -309,6 +384,13 @@ export const useGameStore = create((set) => ({
 
     if (newPrestigio < 10) {
       const defeatCard = derrotas.find(d => d.idDerrota === 'PrestigioMin');
+      sendTelemetryEvent('temporada_terminada', {
+        resultado: "Derrota",
+        turnoFinal: state.turnoTemporada,
+        motivoFin: 'PrestigioMin',
+        faccionesAlFinalizar: state.factions,
+        cartasJugadas: state.cartasJugadasTemporada
+      });
       return {
         prestigio: newPrestigio,
         isGameOver: true,
@@ -332,9 +414,10 @@ export const useGameStore = create((set) => ({
     const allClubs = clubsData.filter(c => c.idClub !== state.idClubActual);
     let allowedExpectations = [];
     if (newPrestigio >= 80) allowedExpectations = ['Gigante', 'Altas'];
-    else if (newPrestigio >= 60) allowedExpectations = ['Altas', 'Medias'];
-    else if (newPrestigio >= 40) allowedExpectations = ['Medias', 'Bajas'];
-    else allowedExpectations = ['Bajas', 'Ascenso'];
+    else if (newPrestigio >= 70) allowedExpectations = ['Altas', 'Medias'];
+    else if (newPrestigio >= 60) allowedExpectations = ['Medias'];
+    else if (newPrestigio >= 30) allowedExpectations = ['Bajas'];
+    else allowedExpectations = ['Ascenso'];
 
     const filtered = allClubs.filter(c => allowedExpectations.includes(c.Expectativas));
     const randomClubs = shuffle(filtered).slice(0, 2);

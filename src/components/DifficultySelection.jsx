@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useGameStore } from '../store/gameStore';
-import { ShieldCheck, Flame, Zap, Check, ArrowRight, Trophy } from 'lucide-react';
+import { ShieldCheck, Flame, Zap, Check, ArrowRight, Trophy, HelpCircle } from 'lucide-react';
+import { TutorialModal } from './TutorialModal';
 import './DifficultySelection.css';
 
 const DIFFICULTIES = [
@@ -31,6 +32,7 @@ const DIFFICULTIES = [
 export const DifficultySelection = () => {
   const { setDificultad, dificultad } = useGameStore();
   const [selected, setSelected] = useState(dificultad || 'medio');
+  const [isTutorialOpen, setIsTutorialOpen] = useState(false);
 
   const handleContinue = () => {
     if (selected) {
@@ -110,6 +112,14 @@ export const DifficultySelection = () => {
 
       <div className="difficulty-actions">
         <button 
+          className="btn-tutorial"
+          onClick={() => setIsTutorialOpen(true)}
+          type="button"
+        >
+          <HelpCircle size={18} />
+          <span>Cómo jugar</span>
+        </button>
+        <button 
           className="btn-continue-difficulty"
           onClick={handleContinue}
           disabled={!selected}
@@ -119,6 +129,11 @@ export const DifficultySelection = () => {
           <ArrowRight size={18} />
         </button>
       </div>
+
+      <TutorialModal 
+        isOpen={isTutorialOpen} 
+        onClose={() => setIsTutorialOpen(false)} 
+      />
     </motion.div>
   );
 };

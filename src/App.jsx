@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StatusBar } from './components/StatusBar';
 import { SwipeCard } from './components/SwipeCard';
 import { GameOverNews } from './components/GameOverNews';
@@ -6,14 +6,24 @@ import { DifficultySelection } from './components/DifficultySelection';
 import { ClubSelection } from './components/ClubSelection';
 import { SeasonSummary } from './components/SeasonSummary';
 import { OffersScreen } from './components/OffersScreen';
+import { CareerSummary } from './components/CareerSummary';
 import { useGameStore } from './store/gameStore';
+import { syncOfflineTelemetry } from './utils/telemetry';
 import './index.css';
 
 function App() {
+  useEffect(() => {
+    const handleOnline = () => syncOfflineTelemetry();
+    window.addEventListener('online', handleOnline);
+    syncOfflineTelemetry(); // Try on initial load
+
+    return () => window.removeEventListener('online', handleOnline);
+  }, []);
+
   const { isGameOver, gamePhase, resetGame, deck } = useGameStore();
 
   const handleDeckEmpty = () => {
-    useGameStore.setState({ gamePhase: 'season_summary' });
+    useGameStore.getState().finishSeason();
   };
 
   return (
@@ -41,6 +51,10 @@ function App() {
 
       {!isGameOver && gamePhase === 'offers' && (
         <OffersScreen />
+      )}
+
+      {!isGameOver && gamePhase === 'career_summary' && (
+        <CareerSummary />
       )}
     </div>
   );

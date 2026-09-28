@@ -141,3 +141,13 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
+
+.stat-box.highlight.stat-win {
+  border: 2px solid #3E6B39;
+  background-color: rgba(62, 107, 57, 0.08);
+}
+
+.stat-box.highlight.stat-loss {
+  border: 2px solid #9C3838;
+  background-color: rgba(156, 56, 56, 0.08);
+}

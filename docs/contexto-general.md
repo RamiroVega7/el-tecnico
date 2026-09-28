@@ -27,7 +27,7 @@ Valor de 1 a 100. Aumenta ganando títulos y clásicos. Define el nivel de los c
 
 ### 3. Fama (Multiplicador)
 Valor de 1 a 100 (Inicia en 50).
-* Si está entre **1-35** o **75-100**, el impacto de las decisiones en las facciones recibe un multiplicador (ej. una decisión de +10 pasa a ser +20).
+* Si está entre **1-35** o **75-100**, el impacto de las decisiones en las facciones recibe un multiplicador x1.5 (ej. una decisión de +10 pasa a ser +15).
 
 ### 4. Idolatría y Objetivos (LOS OBJETIVOS QUEDAN EXCLUIDOS DE LA VERSIÓN ACTUAL)
 Valor acumulativo para ganar reputación local en el club actual.
@@ -43,7 +43,8 @@ Cabe aclarar que al cambiar de club se reinicia la idolatría.
 * **UI Base:** Pantalla principal con las barras de progreso (Jugadores, Dirigencia, Hinchas).
 * **Mecánica:** Swipe (izquierda/derecha) y animaciones de cartas.
 * **Estado:** Lógica funcional de suma/resta a las barras.
-* **Game Over:** Pantalla de fin de juego por llegar a 0 o 100 en las facciones.
+* **Game Over:** Pantalla de fin de juego por llegar a 0 o 100 en las facciones y retiro por falta de prestigio.
+* **Victoria / Resumen de Carrera:** Al sobrevivir un máximo de 10 temporadas, el juego se gana y muestra un resumen estadístico (timeline) de toda la carrera con confetis dorados. Este mismo resumen se muestra al perder de forma definitiva por falta de prestigio.
 * **Datos:** Mazo inicial de 50 cartas *hardcodeadas* en un archivo `cards.json` local.
 
 ## Stack Tecnológico y Entorno de Trabajo

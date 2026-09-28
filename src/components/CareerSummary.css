@@ -1,0 +1,214 @@
+.career-summary-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-dark);
+  z-index: 200;
+  padding: 20px;
+}
+
+.career-card {
+  background-color: var(--color-1);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--text-main);
+}
+
+.career-summary-screen.won .career-card {
+  border-color: #fbbf24;
+  box-shadow: 0 0 40px rgba(251, 191, 36, 0.3);
+}
+
+.career-header {
+  padding: 30px 20px 20px;
+  text-align: center;
+  background-color: var(--color-2);
+  border-bottom: 1px solid var(--text-main);
+  position: relative;
+}
+
+.career-summary-screen.won .career-header {
+  background: linear-gradient(135deg, var(--color-2), #3a2e12);
+  border-bottom-color: #fbbf24;
+}
+
+.trophy-icon, .alert-icon {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.career-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  color: var(--text-main);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.career-summary-screen.won .career-title {
+  color: #fbbf24;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.manager-name {
+  font-size: 1.2rem;
+  color: var(--text-main);
+  opacity: 0.9;
+  margin: 5px 0 15px;
+  font-weight: 500;
+}
+
+.career-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  opacity: 0.8;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.timeline-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: var(--color-1);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 25px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--color-1);
+  z-index: 2;
+}
+
+.timeline-content {
+  margin-left: 20px;
+  padding-left: 15px;
+  border-left: 2px solid;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.timeline-item:last-child .timeline-content {
+  border-left-color: transparent !important;
+}
+
+.season-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.season-year {
+  font-weight: bold;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+.season-club {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.season-details {
+  background-color: var(--color-2);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-main);
+}
+
+.fired-badge {
+  display: inline-block;
+  background-color: #9C3838;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 12px;
+  align-self: flex-start;
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.career-footer {
+  padding: 20px;
+  background-color: var(--color-2);
+  border-top: 1px solid var(--text-main);
+  display: flex;
+  justify-content: center;
+}
+
+.career-summary-screen.won .career-footer {
+  border-top-color: #fbbf24;
+}
+
+.btn-restart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px;
+  background-color: var(--accent-color);
+  color: var(--color-1);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.btn-restart:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  filter: brightness(1.1);
+}
+
+.btn-restart:active {
+  transform: translateY(0);
+}
+
+.career-summary-screen.won .btn-restart {
+  background-color: #fbbf24;
+  color: #1a1a1a;
+}

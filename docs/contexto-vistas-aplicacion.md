@@ -22,4 +22,8 @@ Le da la opción al jugador de cambiar de club (2 opciones de forma aleatoria) o
 
 # Vista 6: Derrota
 
-Muestra la descripción de la derrota y te da la opción de jugar de nuevo. Es en realidad no una nueva vista sino una carta especial, salvo en la situación de derrota por prestigio, en ese caso es la vista número 5 pero en vez de ofrecerte clubes te explica la situación y te da la opción de jugar de nuevo.
+Muestra la descripción de la derrota y te da la opción de continuar. Es en realidad no una nueva vista sino un popup tipo diario, salvo en la situación de derrota por falta de prestigio, donde el despido es inminente y te lleva al resumen de carrera final.
+
+# Vista 7: Resumen de Carrera (Career Summary)
+
+Esta pantalla se muestra al finalizar tu carrera como director técnico, ya sea porque perdiste (tu prestigio bajó a menos de 10 y ningún club quiso contratarte) o porque **ganaste el juego** (lograste sobrevivir las 10 temporadas máximas del juego). Muestra una línea de tiempo (timeline) con el resumen estadístico de cada temporada disputada. Si lograste ganar el juego, la pantalla muestra detalles dorados y una animación de confeti para celebrar la hazaña histórica. Desde esta pantalla podés reiniciar el juego y empezar una nueva carrera.

@@ -150,7 +150,7 @@ export const GameOverNews = () => {
               onClick={handleDefeatAction}
               type="button"
             >
-              {card.idDerrota === 'PrestigioMin' ? <RotateCcw size={18} /> : <ArrowRight size={18} />}
+              <ArrowRight size={18} />
               <span>{card.botonAccion || "Firmar Rescisión y Continuar"}</span>
             </button>
             <p className="newspaper-footnote">

@@ -286,3 +286,8 @@
 .horizontal-track {
   height: 0.24rem;
 }
+
+.metric-warning .metric-value,
+.metric-warning .metric-label {
+  color: #D32F2F;
+}

@@ -235,3 +235,24 @@
 .match-continue-btn:active {
   transform: translateY(0);
 }
+
+.match-time-tag.simulating {
+  color: #3E6B39;
+  animation: pulse-time 1s infinite;
+}
+
+@keyframes pulse-time {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.match-continue-btn.skip-btn {
+  background: linear-gradient(135deg, #7A665A 0%, #5C4B42 100%);
+  border-color: #8C7569;
+}
+
+.match-continue-btn.skip-btn:hover {
+  background: linear-gradient(135deg, #8C7569 0%, #6E5B5B 100%);
+  border-color: #A78A7F;
+}

@@ -21,8 +21,7 @@
         "afectadosNegativo": {
           "dirigencia": "Baja",
           "hinchas": "Baja"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Entrenar duro",
@@ -32,8 +31,7 @@
         },
         "afectadosNegativo": {
           "vestuario": "Alta"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "vestuario",
@@ -60,7 +58,7 @@
           "hinchas": "Media",
           "vestuario": "Media"
         },
-        "impactoFinanzas": 5000000
+        "impactoFinancieroPorcentaje": 0.5
       },
       "opcion2": {
         "texto": "Retenerlo en el club",
@@ -70,8 +68,7 @@
         },
         "afectadosNegativo": {
           "dirigencia": "Baja"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "dirigencia",
@@ -99,8 +96,7 @@
         },
         "afectadosNegativo": {
           "fama": "Alta"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Criticar a los médicos",
@@ -110,8 +106,7 @@
         "afectadosNegativo": {
           "dirigencia": "Baja",
           "vestuario": "Baja"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "prensa",
@@ -140,7 +135,7 @@
           "dirigencia": "Baja",
           "prestigio": "Baja"
         },
-        "impactoFinanzas": -200000
+        "impactoFinancieroPorcentaje": -0.02
       },
       "opcion2": {
         "texto": "Negarse rotundamente",
@@ -151,8 +146,7 @@
         },
         "afectadosNegativo": {
           "hinchas": "Alta"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "hinchas",
@@ -181,7 +175,7 @@
         "afectadosNegativo": {
           "dirigencia": "Baja"
         },
-        "impactoFinanzas": -100000
+        "impactoFinancieroPorcentaje": -0.01
       },
       "opcion2": {
         "texto": "Llamar a la calma",
@@ -191,8 +185,7 @@
         "afectadosNegativo": {
           "hinchas": "Media",
           "fama": "Alta"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "prensa",
@@ -218,8 +211,7 @@
         },
         "afectadosNegativo": {
           "vestuario": "Alta"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Multa interna y juega",
@@ -229,8 +221,7 @@
         "afectadosNegativo": {
           "dirigencia": "Baja",
           "hinchas": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "vestuario",
@@ -259,7 +250,7 @@
           "hinchas": "Media",
           "prestigio": "Baja"
         },
-        "impactoFinanzas": 3000000
+        "impactoFinancieroPorcentaje": 0.3
       },
       "opcion2": {
         "texto": "Priorizar valores y rechazar",
@@ -269,8 +260,7 @@
         },
         "afectadosNegativo": {
           "dirigencia": "Baja"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "dirigencia",
@@ -300,7 +290,7 @@
           "vestuario": "Baja",
           "dirigencia": "Media"
         },
-        "impactoFinanzas": -50000
+        "impactoFinancieroPorcentaje": -0.01
       },
       "opcion2": {
         "texto": "Mantener puertas cerradas",
@@ -309,8 +299,7 @@
         },
         "afectadosNegativo": {
           "hinchas": "Baja"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "hinchas",
@@ -338,8 +327,7 @@
           "dirigencia": "Media",
           "vestuario": "Media",
           "prestigio": "Baja"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Rechazar y mantener perfil bajo",
@@ -348,8 +336,7 @@
         },
         "afectadosNegativo": {
           "fama": "Alta"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "prensa",
@@ -376,8 +363,7 @@
         },
         "afectadosNegativo": {
           "vestuario": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Bajarlo a reserva",
@@ -387,8 +373,7 @@
         "afectadosNegativo": {
           "hinchas": "Media",
           "dirigencia": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "vestuario",
@@ -413,7 +398,7 @@
         "afectadosNegativo": {
           "vestuario": "Alta"
         },
-        "impactoFinanzas": 1500000
+        "impactoFinancieroPorcentaje": 0.15
       },
       "opcion2": {
         "texto": "Priorizar el descanso físico",
@@ -422,8 +407,7 @@
         },
         "afectadosNegativo": {
           "dirigencia": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "dirigencia",
@@ -451,8 +435,7 @@
         },
         "afectadosNegativo": {
           "dirigencia": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Insultarlo",
@@ -463,8 +446,7 @@
           "hinchas": "Baja",
           "dirigencia": "Media",
           "prestigio": "Baja"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "hinchas",
@@ -492,8 +474,7 @@
         },
         "afectadosNegativo": {
           "vestuario": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Sostener el equipo y buscar al topo",
@@ -503,8 +484,7 @@
         },
         "afectadosNegativo": {
           "fama": "Alta"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "prensa",
@@ -531,8 +511,7 @@
         },
         "afectadosNegativo": {
           "hinchas": "Baja"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Mantener al titular indiscutido",
@@ -541,8 +520,7 @@
         },
         "afectadosNegativo": {
           "vestuario": "Baja"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "vestuario",
@@ -571,7 +549,7 @@
         "afectadosNegativo": {
           "vestuario": "Baja"
         },
-        "impactoFinanzas": -400000
+        "impactoFinancieroPorcentaje": -0.04
       },
       "opcion2": {
         "texto": "Apostar al ojo del entrenador",
@@ -580,8 +558,7 @@
         },
         "afectadosNegativo": {
           "dirigencia": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "dirigencia",
@@ -607,8 +584,7 @@
         },
         "afectadosNegativo": {
           "dirigencia": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Mantener total neutralidad",
@@ -618,8 +594,7 @@
         "afectadosNegativo": {
           "hinchas": "Alta",
           "fama": "Alta"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "hinchas",
@@ -646,8 +621,7 @@
         },
         "afectadosNegativo": {
           "dirigencia": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Ignorar y declarar que mandan los puntos",
@@ -656,8 +630,7 @@
         },
         "afectadosNegativo": {
           "fama": "Alta"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "prensa",
@@ -685,8 +658,7 @@
         "afectadosNegativo": {
           "dirigencia": "Media",
           "prestigio": "Baja"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Bancar a tu cuerpo técnico",
@@ -696,8 +668,7 @@
         },
         "afectadosNegativo": {
           "vestuario": "Baja"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "vestuario",
@@ -725,8 +696,7 @@
         },
         "afectadosNegativo": {
           "vestuario": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Borrar al pibe",
@@ -736,8 +706,7 @@
         "afectadosNegativo": {
           "dirigencia": "Media",
           "hinchas": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "vestuario",
@@ -765,8 +734,7 @@
         "afectadosNegativo": {
           "hinchas": "Baja",
           "fama": "Alta"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Mandar al segundo a buscar azúcar",
@@ -776,8 +744,7 @@
         },
         "afectadosNegativo": {
           "dirigencia": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "hinchas",
@@ -805,8 +772,7 @@
         },
         "afectadosNegativo": {
           "vestuario": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Bancar al 9",
@@ -815,8 +781,7 @@
         },
         "afectadosNegativo": {
           "hinchas": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "vestuario",
@@ -843,8 +808,7 @@
         },
         "afectadosNegativo": {
           "dirigencia": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Hablar en favor de Bacri",
@@ -854,8 +818,7 @@
         "afectadosNegativo": {
           "hinchas": "Alta",
           "prestigio": "Baja"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "dirigencia",
@@ -884,8 +847,7 @@
         },
         "afectadosNegativo": {
           "dirigencia": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Dejarse ganar.",
@@ -896,8 +858,7 @@
           "hinchas": "Alta",
           "vestuario": "Alta",
           "prestigio": "Baja"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "dirigencia",
@@ -922,8 +883,7 @@
         },
         "afectadosNegativo": {
           "hinchas": "Alta"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Pedir disculpas y no volver a ir a programas de streaming.",
@@ -932,8 +892,7 @@
         },
         "afectadosNegativo": {
           "fama": "Alta"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "hinchas",
@@ -960,8 +919,7 @@
         },
         "afectadosNegativo": {
           "fama": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Dejar que rescinda el contrato",
@@ -973,8 +931,7 @@
           "hinchas": "Alta",
           "dirigencia": "Media",
           "prestigio": "Baja"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "prensa",
@@ -1004,7 +961,7 @@
         "afectadosNegativo": {
           "dirigencia": "Media"
         },
-        "impactoFinanzas": -400000
+        "impactoFinancieroPorcentaje": -0.04
       },
       "opcion2": {
         "texto": "Dejar que siga cobrando. Un mal menor.",
@@ -1014,8 +971,7 @@
         "afectadosNegativo": {
           "hinchas": "Alta",
           "prestigio": "Baja"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "dirigencia",
@@ -1041,7 +997,7 @@
         "afectadosNegativo": {
           "hinchas": "Media"
         },
-        "impactoFinanzas": 2000000
+        "impactoFinancieroPorcentaje": 0.2
       },
       "opcion2": {
         "texto": "Rechazar",
@@ -1050,8 +1006,7 @@
         },
         "afectadosNegativo": {
           "dirigencia": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "dirigencia",
@@ -1079,7 +1034,7 @@
           "hinchas": "Media",
           "vestuario": "Media"
         },
-        "impactoFinanzas": 4000000
+        "impactoFinancieroPorcentaje": 0.4
       },
       "opcion2": {
         "texto": "Rechazar",
@@ -1089,8 +1044,7 @@
         },
         "afectadosNegativo": {
           "dirigencia": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "dirigencia",
@@ -1116,8 +1070,7 @@
         },
         "afectadosNegativo": {
           "hinchas": "Media"
-        },
-        "impactoFinanzas": 0
+        }
       },
       "opcion2": {
         "texto": "Rechazar",
@@ -1126,8 +1079,7 @@
         },
         "afectadosNegativo": {
           "vestuario": "Alta"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "jugador",
@@ -1152,7 +1104,7 @@
           "vestuario": "Alta"
         },
         "afectadosNegativo": {},
-        "impactoFinanzas": -500000
+        "impactoFinancieroPorcentaje": -0.05
       },
       "opcion2": {
         "texto": "Rechazar",
@@ -1161,8 +1113,7 @@
         },
         "afectadosNegativo": {
           "vestuario": "Alta"
-        },
-        "impactoFinanzas": 0
+        }
       }
     },
     "faccion": "jugador",

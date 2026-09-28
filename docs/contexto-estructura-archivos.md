@@ -103,6 +103,8 @@ El tecnico/
   - `gamePhase === 'difficulty'` $\rightarrow$ Renderiza [DifficultySelection.jsx](file:///d:/Proyectos/Football%20Slide%20Manager/src/components/DifficultySelection.jsx) (Paso 1).
   - `gamePhase === 'select_club'` $\rightarrow$ Renderiza [ClubSelection.jsx](file:///d:/Proyectos/Football%20Slide%20Manager/src/components/ClubSelection.jsx) (Paso 2).
   - `gamePhase === 'playing'` $\rightarrow$ Renderiza simultáneamente [StatusBar.jsx](file:///d:/Proyectos/Football%20Slide%20Manager/src/components/StatusBar.jsx) y [SwipeCard.jsx](file:///d:/Proyectos/Football%20Slide%20Manager/src/components/SwipeCard.jsx) (Partida activa).
+  - `gamePhase === 'season_summary'` $\rightarrow$ Renderiza [SeasonSummary.jsx](file:///d:/Proyectos/Football%20Slide%20Manager/src/components/SeasonSummary.jsx) (Paso 4: Fin de Temporada).
+  - `gamePhase === 'offers'` $\rightarrow$ Renderiza [OffersScreen.jsx](file:///d:/Proyectos/Football%20Slide%20Manager/src/components/OffersScreen.jsx) (Paso 5: Mercado).
 
 ---
 
@@ -176,7 +178,7 @@ El tecnico/
 - **Lógica Central:**
   - **`iniciarPartida(...)`:** Inicializa los valores base (facciones en 50, fama en 50, prestigio en 50, idolatría en 0, finanzas según el club, temporada 1, año 2026).
   - **`applyChanges(changes)`:**
-    - **Multiplicador de Fama:** Si la fama es baja ($< 35$) o excesiva ($> 75$), las decisiones tienen el doble de impacto ($\times 2$) en las facciones.
+    - **Multiplicador de Fama:** Si la fama es baja ($< 35$) o excesiva ($> 75$), las decisiones aumentan su impacto ($\times 1.5$) en las facciones.
     - **Límites (Clamping):** Mantiene facciones y métricas acotadas entre 0 y 100.
     - **Finanzas:** Maneja montos pequeños como millones y detecta quiebra si `finanzas <= 0`.
     - **Detección de Derrota Inmediata:** Si cualquier facción llega a $0$ o $100$, o las finanzas caen a $\le 0$, marca `isGameOver: true`, asigna el `defeatId` correspondiente (`VestuarioMin`, `VestuarioMax`, `DirigenciaMin`, etc.) y enlaza la carta periodística desde [derrotas.json](file:///d:/Proyectos/Football%20Slide%20Manager/src/assets/cardsInfo/derrotas.json).
@@ -196,17 +198,36 @@ El tecnico/
 
 ---
 
-### 3.8. Capa de Datos Estáticos (Data Layer)
+### 3.8. Resumen de Fin de Temporada (SeasonSummary - Vista 4)
+- **Archivos:** [SeasonSummary.jsx](file:///d:/Proyectos/Football%20Slide%20Manager/src/components/SeasonSummary.jsx) y [SeasonSummary.css](file:///d:/Proyectos/Football%20Slide%20Manager/src/components/SeasonSummary.css).
+- **Descripción:** Muestra el balance anual tras jugar las 20 cartas. Al continuar, desencadena la generación de ofertas (`generateOffers()`).
+
+---
+
+### 3.9. Mercado de Ofertas y Renovación (OffersScreen - Vista 5)
+- **Archivos:** [OffersScreen.jsx](file:///d:/Proyectos/Football%20Slide%20Manager/src/components/OffersScreen.jsx) y [OffersScreen.css](file:///d:/Proyectos/Football%20Slide%20Manager/src/components/OffersScreen.css).
+- **Descripción:** Muestra las opciones de renovación con el club actual o la aceptación de ofertas de 2 nuevos clubes. Llama a `acceptOffer(offer)` para reiniciar la temporada o iniciar con un nuevo club. Lógica de retiro si `prestigio < 10`.
+
+---
+
+### 3.10. Resumen de Carrera (CareerSummary - Vista 7)
+- **Archivos:** [CareerSummary.jsx](file:///d:/Proyectos/Football%20Slide%20Manager/src/components/CareerSummary.jsx) y [CareerSummary.css](file:///d:/Proyectos/Football%20Slide%20Manager/src/components/CareerSummary.css).
+- **Descripción:** Muestra la línea de tiempo final con todas las temporadas jugadas una vez que el jugador pierde por prestigio (menos de 10) o gana el juego (alcanza las 10 temporadas). Incluye una animación de confeti si la carrera resulta victoriosa.
+
+---
+
+### 3.11. Capa de Datos Estáticos (Data Layer)
 - **Directorio:** `src/assets/cardsInfo/`
 - **Archivos:**
   - [cards.json](file:///d:/Proyectos/Football%20Slide%20Manager/src/assets/cardsInfo/cards.json): Catálogo de las 50 cartas de juego con atributos: `idCarta`, `tipo`, `personaje`, `tituloCarta`, `descripcion`, `incidencia`, `opciones` (`opcion1` y `opcion2` con `afectadosPositivo`, `afectadosNegativo`, `impactoFinanzas`) y `faccion`.
-  - [clubs.json](file:///d:/Proyectos/Football%20Slide%20Manager/src/assets/cardsInfo/clubs.json): Lista de 8 clubes con `idClub`, `NombreClub`, `Capitan`, `Presidente`, `HinchaCaracterizado`, `Pais`, `ColorPrincipal`, `Expectativas`, `DivisionInicial`, `FinanzasInicial` y `ClasicoRivalId`.
-  - [derrotas.json](file:///d:/Proyectos/Football%20Slide%20Manager/src/assets/cardsInfo/derrotas.json): Las 7 condiciones de derrota inmediata con textos periodísticos, volantas, titulares, bajadas, crónicas, fotos y botones.
+  - [clubs.json](file:///d:/Proyectos/Football%20Slide%20Manager/src/assets/cardsInfo/clubs.json): Lista de clubes con `idClub`, `NombreClub`, `Capitan`, `Presidente`, `HinchaCaracterizado`, `Pais`, `ColorPrincipal`, `Expectativas`, `DivisionInicial`, `FinanzasInicial` y `ClasicoRivalId`.
+  - [derrotas.json](file:///d:/Proyectos/Football%20Slide%20Manager/src/assets/cardsInfo/derrotas.json): Las condiciones de derrota inmediata con textos periodísticos, volantas, titulares, bajadas, crónicas, fotos y botones.
+  - [cartasObligatorias.json](file:///d:/Proyectos/Football%20Slide%20Manager/src/assets/cardsInfo/cartasObligatorias.json): Eventos fijos que ocurren en turnos específicos de la temporada (Fichaje, Clásico, Partido Final).
   - [index.js](file:///d:/Proyectos/Football%20Slide%20Manager/src/assets/cardsInfo/index.js): Barrel file que facilita la importación limpia de los datos.
 
 ---
 
-### 3.9. Tokens Globales y Sistema de Diseño (Design System)
+### 3.12. Tokens Globales y Sistema de Diseño (Design System)
 - **Archivo:** [index.css](file:///d:/Proyectos/Football%20Slide%20Manager/src/index.css).
 - **Propiedades clave:**
   - **Paleta Vintage Invertida:**
@@ -246,18 +267,12 @@ El tecnico/
 
 ---
 
-## 5. Funcionalidades en Desarrollo / Próximos Pasos (Backlog)
+## 5. Funcionalidades Pendientes / Próximos Pasos (Backlog)
 
-Según lo detallado en [contexto-flujo.md](file:///d:/Proyectos/Football%20Slide%20Manager/docs/contexto-flujo.md) y [contexto-estructura-datos.md](file:///d:/Proyectos/Football%20Slide%20Manager/docs/contexto-estructura-datos.md), los siguientes módulos se incorporarán en las próximas fases:
-1. **Control de Temporada (20 cartas por año):**
-   - Contador de cartas jugadas y límite de temporada (`turnoActual: 1..20`).
-2. **Cartas Obligatorias Fijas:**
-   - Turno 1: Fichaje estrella (impacta finanzas, vestuario, dirigencia y probabilidad de partidos).
-   - Turno 10: Previa del Clásico ("Boquearla") + Evento especial del resultado del Clásico.
-   - Turno 19: Doble turno antes de la definición.
-   - Turno 20: Partido importante final de temporada (Promoción, Descenso, Copas, Torneo).
-3. **Resumen de Fin de Temporada (Vista 4):**
-   - Pantalla de balance anual (clásico ganado, objetivo cumplido, prestigio e idolatría acumulados).
-4. **Mercado de Ofertas y Renovación (Vista 5):**
-   - Elección de renovación con el club actual o aceptar ofertas de 2 clubes nuevos según prestigio.
-   - Si `Prestigio < 10`: Derrota por falta de ofertas y retiro obligado.
+Según lo detallado en [contexto-flujo.md](file:///d:/Proyectos/Football%20Slide%20Manager/docs/contexto-flujo.md) y [contexto-general.md](file:///d:/Proyectos/Football%20Slide%20Manager/docs/contexto-general.md), las mecánicas principales de la temporada y el mercado de ofertas **ya están implementadas**. Los siguientes módulos son los que se incorporarán en las próximas fases:
+1. **Selecciones Nacionales:**
+   - Ofertas para dirigir selecciones si `Prestigio > 80`.
+   - Modificación del mazo de temporada a 10 cartas en lugar de 20.
+   - Torneos internacionales y eliminatorias.
+2. **Sistema Completo de Objetivos (Idolatría):**
+   - 3 misiones por temporada (una por facción) para generar idolatría adicional.

@@ -27,6 +27,19 @@ export const SeasonSummary = () => {
     return res;
   };
 
+  const getClasicoOutcome = (res) => {
+    if (res === 'pendiente' || !res) return null;
+    const parts = res.split('-');
+    if (parts.length !== 2) return null;
+    const local = parseInt(parts[0].trim());
+    const vis = parseInt(parts[1].trim());
+    if (local > vis) return 'win';
+    if (local < vis) return 'loss';
+    return 'draw';
+  };
+
+  const clasicoOutcome = getClasicoOutcome(resultadoClasico);
+
   return (
     <motion.div 
       className="season-summary-screen"
@@ -43,15 +56,15 @@ export const SeasonSummary = () => {
         </div>
 
         <div className="summary-stats-grid">
-          <div className="stat-box highlight">
-            <Trophy size={24} color="#fbbf24" />
+          <div className={`stat-box highlight ${objetivoCumplido ? 'stat-win' : 'stat-loss'}`}>
+            <Trophy size={24} color={objetivoCumplido ? "#fbbf24" : "#991b1b"} />
             <div className="stat-content">
               <span className="stat-label">Objetivo Anual</span>
               <span className="stat-value">{objetivoCumplido ? 'Cumplido' : 'Fracasó'}</span>
             </div>
           </div>
-          <div className="stat-box highlight">
-            <Medal size={24} color="#60a5fa" />
+          <div className={`stat-box highlight ${clasicoOutcome === 'win' ? 'stat-win' : (clasicoOutcome === 'loss' ? 'stat-loss' : '')}`}>
+            <Medal size={24} color={clasicoOutcome === 'win' ? "#3E6B39" : (clasicoOutcome === 'loss' ? "#9C3838" : "#60a5fa")} />
             <div className="stat-content">
               <span className="stat-label">El Clásico</span>
               <span className="stat-value capitalize">{formatMatchResult(resultadoClasico)}</span>

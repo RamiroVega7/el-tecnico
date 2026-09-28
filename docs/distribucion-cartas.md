@@ -108,72 +108,23 @@ Este análisis contabiliza los **Puntos Totales de Impacto** que recibe cada mé
 
 ---
 
-## 7. Balance Financiero por Expectativas
+## 7. Balance Financiero (Sistema Porcentual Dinámico)
 
-El siguiente análisis detalla cuánto dinero permiten ganar o perder las cartas disponibles según la expectativa del club. Si un jugador toma todas las peores decisiones financieras, el "Déficit Máximo Posible" indica cuánta plata perderá en el peor de los casos, y la "Ganancia Máxima" si toma todas las mejores decisiones.
+Para equilibrar el juego entre los clubes de distintas expectativas (que manejan cajas iniciales muy diferentes, desde $2M en el Ascenso hasta $25M en un Gigante), el sistema financiero ha sido migrado a **impactos porcentuales** (`impactoFinancieroPorcentaje`). 
 
-| Expectativa | Ganancia Máxima Posible | Déficit Máximo Posible | Balance Neto Total |
-| :--- | :---: | :---: | :---: |
-| **Ascenso** | $3.000.000 | $-1.150.000 | $1.850.000 |
-| **Bajas** | $7.000.000 | $-1.650.000 | $5.350.000 |
-| **Medias** | $14.000.000 | $-1.650.000 | $12.350.000 |
-| **Altas** | $15.500.000 | $-1.650.000 | $13.850.000 |
-| **Gigante** | $15.500.000 | $-1.650.000 | $13.850.000 |
+Esto garantiza que una buena o mala decisión tenga el mismo "peso" relativo para cualquier club, evitando que una opción quiebre instantáneamente a un club chico o pase desapercibida para uno grande.
 
-### Detalle de Cartas con Impacto Financiero
+### Distribución de Impactos Porcentuales por Carta:
 
-#### Ascenso
-- **[ID 4]** Apriete por Entradas (Rango: -$200.000 a $0)
-- **[ID 5]** Polémica Arbitral al Aire (Rango: -$100.000 a $0)
-- **[ID 7]** Sponsor de Apuestas Online (Rango: $0 a $3.000.000)
-- **[ID 8]** Banderazo Previo al partido (Rango: -$50.000 a $0)
-- **[ID 15]** Software de Scouting y Métricas (Rango: -$400.000 a $0)
-- **[ID 26]** Jugada sucia (Rango: -$400.000 a $0)
+*   **[ID 2]** Oferta Millonaria por la Promesa: **+50%** del presupuesto inicial.
+*   **[ID 4]** Apriete por Entradas: **-2%** del presupuesto inicial.
+*   **[ID 5]** Polémica Arbitral al Aire: **-1%** del presupuesto inicial.
+*   **[ID 7]** Sponsor de Apuestas Online: **+30%** del presupuesto inicial.
+*   **[ID 11]** Gira Relámpago en Fecha FIFA: **+15%** del presupuesto inicial.
+*   **[ID 15]** Software de Scouting y Métricas: **-4%** del presupuesto inicial.
+*   **[ID 26]** Jugada sucia: **-4%** del presupuesto inicial.
+*   **[ID 27]** Naming: **+20%** del presupuesto inicial.
+*   **[ID 28]** La joya asiática: **+40%** del presupuesto inicial.
+*   **[ID 30]** Victoria importante: **-5%** del presupuesto inicial.
 
-#### Bajas
-- **[ID 4]** Apriete por Entradas (Rango: -$200.000 a $0)
-- **[ID 5]** Polémica Arbitral al Aire (Rango: -$100.000 a $0)
-- **[ID 7]** Sponsor de Apuestas Online (Rango: $0 a $3.000.000)
-- **[ID 8]** Banderazo Previo al partido (Rango: -$50.000 a $0)
-- **[ID 15]** Software de Scouting y Métricas (Rango: -$400.000 a $0)
-- **[ID 26]** Jugada sucia (Rango: -$400.000 a $0)
-- **[ID 28]** La joya asiatica (Rango: $0 a $4.000.000)
-- **[ID 30]** Victoria importante (Rango: -$500.000 a $0)
-
-#### Medias
-- **[ID 2]** Oferta Millonaria por la Promesa (Rango: $0 a $5.000.000)
-- **[ID 4]** Apriete por Entradas (Rango: -$200.000 a $0)
-- **[ID 5]** Polémica Arbitral al Aire (Rango: -$100.000 a $0)
-- **[ID 7]** Sponsor de Apuestas Online (Rango: $0 a $3.000.000)
-- **[ID 8]** Banderazo Previo al partido (Rango: -$50.000 a $0)
-- **[ID 15]** Software de Scouting y Métricas (Rango: -$400.000 a $0)
-- **[ID 26]** Jugada sucia (Rango: -$400.000 a $0)
-- **[ID 27]** Naming (Rango: $0 a $2.000.000)
-- **[ID 28]** La joya asiatica (Rango: $0 a $4.000.000)
-- **[ID 30]** Victoria importante (Rango: -$500.000 a $0)
-
-#### Altas
-- **[ID 2]** Oferta Millonaria por la Promesa (Rango: $0 a $5.000.000)
-- **[ID 4]** Apriete por Entradas (Rango: -$200.000 a $0)
-- **[ID 5]** Polémica Arbitral al Aire (Rango: -$100.000 a $0)
-- **[ID 7]** Sponsor de Apuestas Online (Rango: $0 a $3.000.000)
-- **[ID 8]** Banderazo Previo al partido (Rango: -$50.000 a $0)
-- **[ID 11]** Gira Relámpago en Fecha FIFA (Rango: $0 a $1.500.000)
-- **[ID 15]** Software de Scouting y Métricas (Rango: -$400.000 a $0)
-- **[ID 26]** Jugada sucia (Rango: -$400.000 a $0)
-- **[ID 27]** Naming (Rango: $0 a $2.000.000)
-- **[ID 28]** La joya asiatica (Rango: $0 a $4.000.000)
-- **[ID 30]** Victoria importante (Rango: -$500.000 a $0)
-
-#### Gigante
-- **[ID 2]** Oferta Millonaria por la Promesa (Rango: $0 a $5.000.000)
-- **[ID 4]** Apriete por Entradas (Rango: -$200.000 a $0)
-- **[ID 5]** Polémica Arbitral al Aire (Rango: -$100.000 a $0)
-- **[ID 7]** Sponsor de Apuestas Online (Rango: $0 a $3.000.000)
-- **[ID 8]** Banderazo Previo al partido (Rango: -$50.000 a $0)
-- **[ID 11]** Gira Relámpago en Fecha FIFA (Rango: $0 a $1.500.000)
-- **[ID 15]** Software de Scouting y Métricas (Rango: -$400.000 a $0)
-- **[ID 26]** Jugada sucia (Rango: -$400.000 a $0)
-- **[ID 27]** Naming (Rango: $0 a $2.000.000)
-- **[ID 28]** La joya asiatica (Rango: $0 a $4.000.000)
-- **[ID 30]** Victoria importante (Rango: -$500.000 a $0)
+*Nota Analítica:* Utilizando un ancla porcentual sobre el presupuesto base del club, el riesgo de "hiperinflación" está completamente mitigado, permitiendo también que el club vaya a la quiebra si acumula demasiados impactos negativos (lo cual era imposible si se calculaba sobre la caja actual menguante). La curva de dificultad se mantiene estandarizada sin importar si diriges a Boca Juniors o a Chacarita.

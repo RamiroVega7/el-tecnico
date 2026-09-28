@@ -25,7 +25,7 @@
             "dirigencia": "Alta"
           },
           "impactoFinancieroPorcentaje": -0.33,
-          "bonusProbClasico": 0.10,
+          "bonusProbClasico": 0.1,
           "bonusProbPartidoFinal": 0.15
         },
         "opcion2": {
@@ -116,7 +116,7 @@
           },
           "impactoFinancieroPorcentaje": 0,
           "bonusProbClasico": 0,
-          "bonusProbPartidoFinal": 0.10
+          "bonusProbPartidoFinal": 0.1
         },
         "opcion2": {
           "texto": "Entrenamiento normal",
@@ -129,7 +129,7 @@
           },
           "impactoFinancieroPorcentaje": 0,
           "bonusProbClasico": 0,
-          "bonusProbPartidoFinal": -0.10
+          "bonusProbPartidoFinal": -0.1
         }
       },
       "despliegaEventoEspecialInmediato": false,

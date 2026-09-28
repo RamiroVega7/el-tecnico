@@ -166,6 +166,32 @@
   margin-top: 1.25rem;
   display: flex;
   flex-direction: column;
+  gap: 0.6rem;
+}
+
+.btn-tutorial {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #3F3A3A;
+  border: 1.5px solid #6E5B5B;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-tutorial:hover {
+  background: rgba(110, 91, 91, 0.1);
+  border-color: #3F3A3A;
 }
 
 .btn-continue-difficulty {

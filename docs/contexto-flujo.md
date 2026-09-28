@@ -62,4 +62,8 @@ Perder no implica volver a empezar la partida, sino que te despiden de tu club a
 
 ## Final del juego.
 
-El juego dura 10 temporadas. Cuando terminas las 10 temporadas, se te muestran todos los clasicos que jugaste y sus resultados y tambien todos los objetivos anuales que cumpliste. 
+El juego dura un máximo de 10 temporadas. Si lográs sobrevivir (es decir, no perder por prestigio mínimo) las 10 temporadas, habrás completado la carrera y ganado el juego, lo cual es una verdadera hazaña. En ese momento (o cuando pierdas tu carrera al llegar a menos de 10 de prestigio y no recibir más ofertas), se muestra la pantalla de **Resumen de Carrera**. 
+
+Esta vista final exhibe una línea de tiempo (timeline) detallada con el balance final de cada una de tus temporadas: el club que dirigiste, si ganaste el clásico, si cumpliste o fracasaste en el objetivo, y si te echaron de tu puesto a mitad de temporada. 
+
+Si llegaste al final y ganaste el juego, la pantalla se viste de detalles dorados y se activa una animación de confetis en celebración de tu éxito rotundo como director técnico. Desde allí, puedes reiniciar una nueva historia. 
